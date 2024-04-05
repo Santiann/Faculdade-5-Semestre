@@ -1,0 +1,5 @@
+Aula06 - Problema: Criar um buffer sem utilizar bibliotecas. Usando a lógica dos sinaleiros.
+
+Caso não seja muito dificil usar ponteiros
+
+Basicamente inserir em um array da mesma forma que é feito com arrayblockingqueue só que sem a biblioteca usando fila. 
