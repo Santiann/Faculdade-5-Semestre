@@ -1,22 +1,38 @@
-import java.util.concurrent.ArrayBlockingQueue;
-// Nessa clase temos um buffer que é uma fila de tamanho fixo
 public class Buffer {
-    private ArrayBlockingQueue<Integer> buffer;
+    private int[] buffer;
+    private int capacity;
+    private int size;
+    private int front;
+    private int rear;
 
     public Buffer(int capacity) {
-        buffer = new ArrayBlockingQueue<>(capacity);
+        this.capacity = capacity;
+        this.size = 0;
+        this.buffer = new int[capacity];
+        this.front = 0;
+        this.rear = -1;
     }
 
-    //produtor vai inserir um elemento na fila
-    public void produce(int value) throws InterruptedException {
-        //put vai inserir na fila
-        buffer.put(value);  //se não tiver espaço ele vai esperar e put vai ficar bloqueado
+    public synchronized void produce(int value) throws InterruptedException {
+        while (size == capacity) {
+            wait();
+        }
+
+        rear = (rear + 1) % capacity;
+        buffer[rear] = value;
+        size++;
+        notifyAll();
     }
 
-    public int consume () throws InterruptedException {
-        return buffer.take(); //se não tiver elementos ele vai esperar
-        //quando consumir o metodo take vai tirar o primeiro elemento da fila
+    public synchronized int consume() throws InterruptedException {
+        while (size == 0) {
+            wait();
+        }
+
+        int value = buffer[front];
+        front = (front + 1) % capacity;
+        size--;
+        notifyAll();
+        return value;
     }
 }
-
-//Quando estiver cheio, o produtor vai esperar até que o consumidor consuma
