@@ -16,6 +16,27 @@ class Car {
         this.position = position;
     }
 
-    // Getters
-    // Implement setters if needed
+    public int getId() {
+        return id;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getProductionStationId() {
+        return productionStationId;
+    }
+
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }
