@@ -1,15 +1,8 @@
 /**
-<<<<<<< HEAD
  * Escreva um programa que crie um arquivo chamado "registro.txt" para armazenar informações de
  * alunos. O programa deve permitir ao usuário inserir os dados de vários alunos, como nome,
- * matrícula e idade. Os dados de cada aluno devem ser escritos no arquivo em um formato específico.
+ * matrí­cula e idade. Os dados de cada aluno devem ser escritos no arquivo em um formato específico.
  * Depois que o usuário inserir os dados, o programa deve listar os alunos do arquivo no console.
- */
-=======
- * Escreva um programa que crie um arquivo chamado "registro.txt" para armazenar informaÃ§Ãµes de
- * alunos. O programa deve permitir ao usuÃ¡rio inserir os dados de vÃ¡rios alunos, como nome,
- * matrÃ­cula e idade. Os dados de cada aluno devem ser escritos no arquivo em um formato especÃ­fico.
- * Depois que o usuÃ¡rio inserir os dados, o programa deve listar os alunos do arquivo no console.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -30,13 +23,13 @@ void armazenaAlunos(FILE *arquivo, int numAlunos)
         printf("Digite o nome do aluno %d: ", i);
         scanf(" %[^\n]", aluno.nome);
 
-        printf("Digite a matrÃ­cula do aluno %d: ", i);
+        printf("Digite a matrícula do aluno %d: ", i);
         scanf("%d", &aluno.matricula);
 
         printf("Digite a idade do aluno %d: ", i);
         scanf("%d", &aluno.idade);
 
-        fprintf(arquivo, "Nome: %s\nMatrÃ­cula: %d\nIdade: %d\n\n", aluno.nome, aluno.matricula, aluno.idade);
+        fprintf(arquivo, "Nome: %s\nMatrícula: %d\nIdade: %d\n\n", aluno.nome, aluno.matricula, aluno.idade);
     }
 }
 
@@ -74,4 +67,3 @@ int main()
     fclose(arquivo);
     return 0;
 }
->>>>>>> a5f264d32a36aa0a69c73e69205aeb335446c40b
