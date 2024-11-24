@@ -1,17 +1,16 @@
 /**
- * Faça um programa que solicite ao usuário a quantidade de nomes que deseja
+ * FaÃ§a um programa que solicite ao usuÃ¡rio a quantidade de nomes que deseja
  * armazenar.
- * Após a inserção dos nomes, apresente uma lista em ordem alfabética dos
+ * ApÃ³s a inserÃ§Ã£o dos nomes, apresente uma lista em ordem alfabÃ©tica dos
  * nomes cadastrados.
  */
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
 #define MAX_NAME_LENGTH 100
 
-// Função para trocar dois elementos no array
+// FunÃ§Ã£o para trocar dois elementos no array
 void swap(char a[], char b[]) {
     char temp[MAX_NAME_LENGTH];
     strcpy(temp, a);
@@ -19,7 +18,7 @@ void swap(char a[], char b[]) {
     strcpy(b, temp);
 }
 
-// Função para ordenar os nomes usando Bubble Sort
+// FunÃ§Ã£o para ordenar os nomes usando Bubble Sort
 void bubbleSort(char names[][MAX_NAME_LENGTH], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
@@ -39,11 +38,11 @@ int main() {
     getchar(); // Consumir o caractere de nova linha deixado pelo scanf
 
     if (numNames <= 0) {
-        printf("Quantidade inválida. Encerrando o programa.\n");
+        printf("Quantidade invÃ¡lida. Encerrando o programa.\n");
         return 1;
     }
 
-    // Alocar memória para os nomes
+    // Alocar memÃ³ria para os nomes
     char names[numNames][MAX_NAME_LENGTH];
 
     // Ler os nomes
